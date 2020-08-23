@@ -9,6 +9,7 @@ import java.math.BigDecimal;
  */
 public class PoloniexWSSTicker {
 
+    public int indice;
     public final Double currencyPair;
     public final BigDecimal lastPrice;
     public final BigDecimal lowestAsk;

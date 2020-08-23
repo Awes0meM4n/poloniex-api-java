@@ -96,7 +96,7 @@ public class PoloniexWSSClientRouter extends SimpleChannelInboundHandler<Object>
         WebSocketFrame frame = (WebSocketFrame) msg;
         if (frame instanceof TextWebSocketFrame) {
             TextWebSocketFrame textFrame = (TextWebSocketFrame) frame;
-            LOG.trace("WebSocket Client received message: " + textFrame.text());
+//            LOG.trace("WebSocket Client received message: " + textFrame.text());
             List results = this.gson.fromJson(textFrame.text(), List.class);
             this.subscriptions.getOrDefault(results.get(0), this.defaultSubscriptionMessageHandler).handle(textFrame.text());
             
